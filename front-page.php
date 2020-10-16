@@ -112,7 +112,7 @@
     ?> 
   </ul>
   <!-- ./articles-list -->
-  <ul class="articles-grid">
+  <div class="articles-grid">
     <?php		
       global $post;
 // формируем запрос в базу данных
@@ -133,7 +133,7 @@
             // выводим первый пост
             case '1':
               ?>
-                <li class="articles-grid-item articles-grid-item-1">
+                <div class="articles-grid-item articles-grid-item-1">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
                     <div class="articles-grid-thumb">
                       <img src="<?php echo get_the_post_thumbnail_url()?>" alt="">
@@ -154,12 +154,12 @@
                       <!-- /.comments -->
                     </div>
                   </a>
-                </li>
+                </div>
                <?php
               break;
             // выводим второй пост
             case '2': ?>
-              <li class="articles-grid-item articles-grid-item-2">
+              <div class="articles-grid-item articles-grid-item-2">
                   <img src="<?php echo get_the_post_thumbnail_url()?>" alt="" class="articles-grid-thumb">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
                     <span class="tag">
@@ -192,38 +192,29 @@
                       </div>
                     </div>
                   </a>
-                </li>
+                </div>
             <?php break;
             // вывод третьего поста
             case '3': ?>
-              <li class="articles-grid-item articles-grid-item-3">
+              <div class="articles-grid-item articles-grid-item-3">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
                     <img src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="" class="articles-grid-thumb">
-                    <h4 class="articles-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, "..."); ?></h4>
+                    <h4 class="articles-grid-title"><?php the_title(); ?></h4>
                   </a>
-                </li>
+                </div>
             <?php break;
             default: ?>
-                <li class="articles-grid-item articles-grid-item-default">
+                <div class="articles-grid-item articles-grid-item-default">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
-                    <h4 class="articles-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, "..."); ?></h4>
+                    <h4 class="articles-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 40, "..."); ?></h4>
                     <p class="articles-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 50, "..."); ?></p>
                     <span class="articles-grid-date"><?php the_time('j F');?></span>
                   </a>
-                </li>
+                </div>
               <?php break;
           }
           ?>   
-          <li class="articles-grid-item articles-grid-item-check-list">
-            <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
-              <h4 class="articles-grid-title">Чек-лист</h4>              
-            </a>
-          </li>  
-          <li class="articles-grid-item articles-grid-item-tags">
-            <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
-              <h4 class="articles-grid-title">Теги</h4>              
-            </a>
-          </li>     
+         
           <?php 
         }
       } else {
@@ -232,8 +223,11 @@
 
       wp_reset_postdata(); // Сбрасываем $post
   ?>
-  </ul>
+   <!-- подключаем сайдбар -->
+   <?php get_sidebar();?>
+  </div>
   <!-- /.articles-grid -->
+  
 </div>
 <!-- /.container -->
 <?php
