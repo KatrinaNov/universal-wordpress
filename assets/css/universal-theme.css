@@ -118,7 +118,7 @@ body {
 .front-page-header {
   background: #262D33;
   position: relative;
-  padding-top: 30px;
+  padding-top: 25px;
   height: 475px;
 }
 
@@ -135,8 +135,8 @@ body {
 }
 
 .hero .left {
-  -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  -ms-flex-preferred-size: 82%;
+      flex-basis: 82%;
   position: relative;
   padding: 55px 55px 100px;
   display: -webkit-box;
@@ -170,6 +170,7 @@ body {
   right: 0;
   bottom: 0;
   z-index: 0;
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -266,7 +267,7 @@ body {
 }
 
 .hero .right .post {
-  padding: 17px 25px 19px 25px;
+  padding: 12px 25px 19px 25px;
   margin: 0;
   border-top: 1px solid #D9DADB;
   min-height: 100px;
@@ -307,7 +308,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-top: 180px;
+  margin-top: 148px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,6 +364,13 @@ body {
   font-weight: 900;
 }
 
+.articles-thumb {
+  width: 65px;
+  height: 65px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .articles-grid {
   padding: 0;
   margin: 30px 0;
@@ -392,7 +400,7 @@ body {
   height: 100%;
 }
 
-.articles-grid-permalink:hover {
+.articles-grid-permalink:hover, .articles-grid-permalink:visited {
   color: #262D33;
 }
 
@@ -436,7 +444,7 @@ body {
   display: block;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -1px;
   height: 100%;
   width: 70%;
   z-index: 2;
@@ -457,7 +465,7 @@ body {
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
-  max-width: 238px;
+  max-width: 260px;
   padding-left: 35px;
   z-index: 5;
 }
@@ -466,7 +474,7 @@ body {
   position: relative;
   line-height: 20px;
   color: #4B5157;
-  max-width: 228px;
+  max-width: 260px;
   padding-left: 35px;
   z-index: 5;
 }
@@ -716,6 +724,12 @@ body {
   grid-area: 1 / 4 / 5 / 5;
 }
 
+.widget {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
 .widget-downloader {
   background: #3BBDC4 url("../images/file.svg") no-repeat top 24px right 22px;
   border-radius: 10px;
@@ -735,8 +749,7 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0;
   padding: 0 25px;
 }
 
@@ -766,5 +779,109 @@ body {
 .widget-downloader .description {
   padding: 0 25px;
   color: #C1F4F5;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.widget_tag_cloud {
+  min-height: 340px;
+}
+
+.widget_tag_cloud .widget-title {
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 20px 25px;
+  margin: 0;
+}
+
+.widget-social {
+  padding: 30px 25px 40px;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.widget-social .widget-title {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  font-family: Roboto Slab;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.widget-social .widget-link {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+.widget-social .widget-link-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.widget-social .widget-link-facebook {
+  background: #4267B2;
+}
+
+.widget-social .widget-link-twitter {
+  background: #1DA1F2;
+}
+
+.widget-social .widget-link-youtube {
+  background: #FF0000;
+}
+
+.widget-social .widget-link-insta {
+  border: 2px solid #ff2659;
+}
+
+.tagcloud {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 25px 25px 20px;
+  border-top: 1px solid #D9DADB;
+}
+
+.tag-cloud-link {
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 20px;
+  padding: 4px 15px;
+  border: 1px solid #d9dadb;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  color: #262D33;
+  text-transform: capitalize;
 }

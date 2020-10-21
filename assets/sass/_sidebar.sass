@@ -2,6 +2,9 @@
   &-front-page
     grid-area: 1 / 4 / 5 / 5
 .widget
+  background: #fff
+  border-radius: 10px
+  margin-bottom: 30px
   &-downloader
     background: #3BBDC4 url('../images/file.svg') no-repeat top 24px right 22px
     border-radius: 10px
@@ -9,14 +12,13 @@
     padding-top: 25px
     display: flex
     flex-direction: column
-    .widget
+    .widget      
       &-title
         font-family: Roboto Slab
         font-weight: bold
         font-size: 16px
         line-height: 25px
-        margin-top: 0
-        margin-bottom: 10px
+        margin: 0
         padding: 0 25px
       &-link
         width: 100%
@@ -30,8 +32,70 @@
         align-items: center
         justify-content: center
         &-icon
-          margin-right: 10px
+          margin-right: 10px        
     .description
       padding: 0 25px
       color: #C1F4F5
-      margin-bottom: 20px
+      margin-bottom: 15px
+  &_tag_cloud
+    min-height: 340px
+    .widget
+      &-title
+        font-weight: 900
+        font-size: 14px
+        line-height: 20px        
+        letter-spacing: 0.5px
+        text-transform: uppercase
+        padding: 20px 25px
+        margin: 0
+  &-social
+    padding: 30px 25px 40px
+    margin-bottom: 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-wrap: wrap
+    .widget
+      &-title
+        flex-basis: 100%
+        text-align: center
+        font-family: Roboto Slab
+        font-weight: bold
+        font-size: 20px
+        line-height: 25px
+      &-link
+        width: 50px
+        height: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        &-icon
+          width: 20px
+          height: 20px
+        &-facebook
+          background: #4267B2
+        &-twitter
+          background: #1DA1F2
+        &-youtube
+          background: #FF0000
+        &-insta
+          border: 2px solid #ff2659
+.tagcloud
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  flex-wrap: wrap
+  padding: 25px 25px 20px
+  border-top: 1px solid #D9DADB
+.tag-cloud-link
+  text-decoration: none
+  font-weight: 900
+  line-height: 20px
+  padding: 4px 15px
+  border: 1px solid #d9dadb
+  border-radius: 5px
+  margin-right: 10px
+  margin-bottom: 15px
+  color: #262D33
+  text-transform: capitalize

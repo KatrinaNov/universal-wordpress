@@ -21,7 +21,7 @@
         <img src="<?php the_post_thumbnail_url() ?>" alt="" class="post-thumb">
         <?php $author_id=get_the_author_meta( 'ID' );?>
         <a href="<?php echo get_author_posts_url( $author_id );?>" class="author">
-          <img src="<?php echo get_avatar_url($author_id);?>" alt="" class="avatar">
+          <img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_author(); ?>" class="avatar">
           <div class="author-bio">
             <span class="author-name"><?php the_author(); ?></span>
             <span class="author-rank">Должность</span>
@@ -101,7 +101,7 @@
         <a href="<?php the_permalink(); ?>" class="articles-permalink">
           <h4 class="articles-title"><?php echo mb_strimwidth(get_the_title(), 0, 50, "..."); ?></h4>
         </a>
-        <img src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="" class="articles-thumb" width="65" height="65">
+        <img src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="<?php the_title(); ?>" class="articles-thumb" width="65" height="65">
       </li>
     <?php 
       }
@@ -136,15 +136,15 @@
                 <div class="articles-grid-item articles-grid-item-1">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
                     <div class="articles-grid-thumb">
-                      <img src="<?php echo get_the_post_thumbnail_url()?>" alt="">
+                      <img src="<?php echo get_the_post_thumbnail_url()?>" alt="<?php the_title(); ?>">
                     </div>
                     <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
                     <h4 class="articles-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 30, "..."); ?></h4>
-                    <p class="articles-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 90, "..."); ?></p>
+                    <p class="articles-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 110, "..."); ?></p>
                     <div class="articles-grid-info">
                       <div class="author">
                       <?php $author_id=get_the_author_meta( 'ID' );?>
-                        <img src="<?php echo get_avatar_url($author_id);?>" alt="" class="author-avatar">
+                        <img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_author(); ?>" class="author-avatar">
                         <span class="author-name"><strong><?php the_author(); ?></strong> : <?php the_author_meta( 'description' )?></span>
                       </div>
                       <div class="comments">
@@ -160,7 +160,7 @@
             // выводим второй пост
             case '2': ?>
               <div class="articles-grid-item articles-grid-item-2">
-                  <img src="<?php echo get_the_post_thumbnail_url()?>" alt="" class="articles-grid-thumb">
+                  <img src="<?php echo get_the_post_thumbnail_url()?>" alt="<?php the_title(); ?>" class="articles-grid-thumb">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
                     <span class="tag">
                     <?php  $posttags = get_the_tags();
@@ -174,7 +174,7 @@
                     <div class="articles-grid-info">
                       <div class="author">
                       <?php $author_id=get_the_author_meta( 'ID' );?>
-                        <img src="<?php echo get_avatar_url($author_id);?>" alt="" class="avatar">
+                        <img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_title(); ?>" class="avatar">
                         <div class="author-info">
                           <span class="author-name"><strong><?php the_author(); ?></strong></span>                       
                           <span class="date"><?php the_time('j F'); ?></span>
@@ -198,7 +198,7 @@
             case '3': ?>
               <div class="articles-grid-item articles-grid-item-3">
                   <a href="<?php the_permalink(); ?>" class="articles-grid-permalink">
-                    <img src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="" class="articles-grid-thumb">
+                    <img src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="<?php the_title(); ?>" class="articles-grid-thumb">
                     <h4 class="articles-grid-title"><?php the_title(); ?></h4>
                   </a>
                 </div>
