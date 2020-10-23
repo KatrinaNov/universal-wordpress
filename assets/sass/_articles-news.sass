@@ -22,13 +22,15 @@
         background: transparent url('../images/bookmark.svg') no-repeat center
         outline: none
         cursor: pointer
+      &:not(:last-child)
+        .articles-news-grid-permalink
+          border-bottom: 1px solid #D9DADB    
     &-permalink
       display: flex
       align-items: stretch
       padding: 25px 0
-      border-bottom: 1px solid #D9DADB
       color: #262D33
-      text-decoration: none
+      text-decoration: none      
       &:hover, &:visited
         color: #262D33
     &-thumb

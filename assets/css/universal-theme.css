@@ -945,6 +945,10 @@ body {
   cursor: pointer;
 }
 
+.articles-news-grid-item:not(:last-child) .articles-news-grid-permalink {
+  border-bottom: 1px solid #D9DADB;
+}
+
 .articles-news-grid-permalink {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -953,7 +957,6 @@ body {
       -ms-flex-align: stretch;
           align-items: stretch;
   padding: 25px 0;
-  border-bottom: 1px solid #D9DADB;
   color: #262D33;
   text-decoration: none;
 }
