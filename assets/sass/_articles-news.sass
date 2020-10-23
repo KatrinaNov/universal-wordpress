@@ -1,0 +1,71 @@
+.articles-news
+  padding: 60px 0
+  &-grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: 1fr
+    grid-column-gap: 30px
+    &-list
+      grid-area: 1 / 1 / 2 / 4
+      padding: 0 25px
+      background: #fff
+      border-radius: 10px 
+    &-item
+      position: relative
+      .favorites
+        position: absolute
+        right: 0
+        top: 25px
+        width: 20px
+        height: 20px
+        border: none
+        background: transparent url('../images/bookmark.svg') no-repeat center
+        outline: none
+        cursor: pointer
+    &-permalink
+      display: flex
+      align-items: stretch
+      padding: 25px 0
+      border-bottom: 1px solid #D9DADB
+      color: #262D33
+      text-decoration: none
+      &:hover, &:visited
+        color: #262D33
+    &-thumb
+      width: 336px
+      height: 195px
+      object-fit: cover
+      margin-right: 25px   
+    &-right
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      .category-name
+        font-weight: 900
+        font-size: 12px
+        line-height: 15px        
+        letter-spacing: 0.5px
+        text-transform: uppercase
+      .comments, .likes
+        display: flex
+        align-items: center
+        margin-left: 10px
+        &-counter
+          margin-left: 5px
+    &-title
+      font-family: Roboto Slab
+      font-weight: bold
+      font-size: 20px
+      line-height: 25px
+      margin: 15px 0 10px
+    &-excerpt
+      color: #4B5157
+    &-info
+      display: flex
+      align-items: center
+      font-size: 12px
+      line-height: 15px  
+      color: #939699
+      margin-top: auto
+    
+

@@ -88,7 +88,8 @@
 
       $myposts = get_posts([ 
         'numberposts' => 4,
-        'category_name' => 'articles'
+        'category_name' => 'articles',
+        'category' => -20
       ]);
       // есть ли посты
       if( $myposts ){
@@ -230,6 +231,94 @@
   
 </div>
 <!-- /.container -->
+<!-- секция со статьей с расследованиями -->
+<?php		
+  global $post;
+
+  $query = new WP_Query( [
+    'posts_per_page' => 1,
+    'category_name'        => 'investigation',
+  ] );
+
+  if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+      $query->the_post();
+      ?>
+      <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35)), url(<?php the_post_thumbnail_url(); ?>) no-repeat center/cover;">
+        <div class="container">
+            <h2 class="investigation-title"><?php the_title(); ?></h2>
+            <a href="<?php the_permalink(); ?>" class="more">Читать далее</a>
+        </div>
+        <!-- /.container -->
+      </section>
+      <?php 
+    }
+  } else {
+    // Постов не найдено
+  }
+  wp_reset_postdata(); // Сбрасываем $post
+  ?>
+
+  <div class="articles-news">
+    <div class="container">
+      <div class="articles-news-grid">
+        <div class="articles-news-grid-list">
+        <?php		
+        global $post;
+        // формируем запрос в базу данных
+        $query = new WP_Query( [
+          'posts_per_page' => 6,
+          'category_name' => 'news',
+          'order' => 'ASC'
+        ] );
+
+        if ( $query->have_posts() ) {        
+          // пока посты есть, выводим их
+          while ( $query->have_posts() ) {
+            $query->the_post();         
+            ?>              
+              <div class="articles-news-grid-item">
+                <button class="favorites"></button>
+                <a href="<?php the_permalink(); ?>" class="articles-news-grid-permalink">
+                  <img src="<?php echo get_the_post_thumbnail_url()?>" alt="<?php the_title(); ?>" class="articles-news-grid-thumb">
+                  <div class="articles-news-grid-right">
+                    <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
+                    <div class="articles-news-grid-text">
+                      <h4 class="articles-news-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 66, "..."); ?></h4>
+                      <p class="articles-news-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 170, "..."); ?></p>
+                    </div>                    
+                    <div class="articles-news-grid-info">
+                      <span class="date"><?php the_time('j F'); ?></span>
+                      <div class="comments">
+                        <img src="<?php echo get_template_directory_uri() .'/assets/images/comment.svg'?>" alt="icon: comment" class="comments-icon">
+                        <span class="comments-counter"><?php comments_number( '0', '1', '%' ); ?></span>
+                      </div>
+                      <!-- /.comments -->
+                      <div class="likes">
+                        <img src="<?php echo get_template_directory_uri() .'/assets/images/heart-grey.svg'?>" alt="icon: like" class="likes-icon">
+                        <span class="likes-counter"><?php comments_number( '0', '1', '%' ); ?></span>
+                      </div>
+                      <!-- /.likes -->
+                    </div>                        
+                  </div>                  
+                </a>
+              </div>           
+          <?php 
+        }
+      } else {
+        // Постов не найдено
+      }
+      wp_reset_postdata(); // Сбрасываем $post
+    ?>
+        </div>
+   <!-- подключаем сайдбар -->
+   <?php get_sidebar();?>
+      </div>
+      <!-- ./articles-news-grid -->
+    </div>
+  </div>
+  <!-- ./articles-news -->
+
 <?php
 get_footer();
 ?>
