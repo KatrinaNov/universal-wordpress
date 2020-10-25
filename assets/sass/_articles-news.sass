@@ -41,13 +41,7 @@
     &-right
       display: flex
       flex-direction: column
-      justify-content: space-between
-      .category-name
-        font-weight: 900
-        font-size: 12px
-        line-height: 15px        
-        letter-spacing: 0.5px
-        text-transform: uppercase
+      justify-content: space-between      
       .comments, .likes
         display: flex
         align-items: center
@@ -69,5 +63,18 @@
       line-height: 15px  
       color: #939699
       margin-top: auto
-    
+.category-name
+  font-weight: 900
+  font-size: 12px
+  line-height: 15px        
+  letter-spacing: 0.5px
+  text-transform: uppercase  
+  &.news
+    color: #4592FF
+  &.opinions
+    color: #3BBDC4
+  &.hot
+    color: #FF4F52
+  &.collections  
+    color: #AC8EE3
 

@@ -28,7 +28,16 @@
           </div>
         </a>
         <div class="post-text">
-          <?php the_category(); ?>
+          <?php 
+            foreach(get_the_category() as $category) {
+              printf(
+                '<a href="%s" class="category-link %s">%s</a>',
+                esc_url(get_category_link( $category )),
+                esc_html($category -> slug),
+                esc_html($category -> name)
+              );
+            }
+          ?>
           <h2 class="post-title"> <?php echo mb_strimwidth(get_the_title(), 0, 70, "..."); ?></h2>
           <a href="<?php the_permalink(); ?>" class="more">Читать далее</a>
         </div>
@@ -61,7 +70,16 @@
         ?>
             <!-- Вывода постов, функции цикла: the_title() и т.д. -->   
           <li class="post">
-            <?php the_category(); ?>
+            <?php 
+              foreach(get_the_category() as $category) {
+                printf(
+                  '<a href="%s" class="category-link %s">%s</a>',
+                  esc_url(get_category_link( $category )),
+                  esc_html($category -> slug),
+                  esc_html($category -> name)
+                );
+              }
+            ?>
             <a href="<?php the_permalink(); ?>" class="post-permalink">
               <h4 class="post-title"><?php echo mb_strimwidth(get_the_title(), 0, 70, "..."); ?></h4>
             </a>
@@ -282,7 +300,17 @@
                 <a href="<?php the_permalink(); ?>" class="articles-news-grid-permalink">
                   <img src="<?php echo get_the_post_thumbnail_url()?>" alt="<?php the_title(); ?>" class="articles-news-grid-thumb">
                   <div class="articles-news-grid-right">
-                    <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
+                    <?php 
+                      foreach(get_the_category() as $category) {
+                        printf(
+                          '<span href="%s" class="category-name %s">%s</span>',
+                          esc_url(get_category_link( $category )),
+                          esc_html($category -> slug),
+                          esc_html($category -> name)
+                        );
+                      }
+                    ?>
+                    <!-- <?php $category = get_the_category(); echo $category[0]->name; ?></span> -->
                     <div class="articles-news-grid-text">
                       <h4 class="articles-news-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 66, "..."); ?></h4>
                       <p class="articles-news-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 170, "..."); ?></p>
@@ -312,7 +340,7 @@
     ?>
         </div>
    <!-- подключаем сайдбар -->
-   <?php get_sidebar();?>
+   <?php get_sidebar('posts');?>
       </div>
       <!-- ./articles-news-grid -->
     </div>

@@ -7,11 +7,11 @@
  * @package universal-example
  */
 
-if ( ! is_active_sidebar( 'main-sidebar' ) ) {
+if ( ! is_active_sidebar( 'posts-sidebar' ) ) {
 	return;
 }
 ?>
 
-<aside id="first" class="sidebar-front-page">
-	<?php dynamic_sidebar( 'main-sidebar' ); ?>
-</aside><!-- #first -->
+<aside id="secondary" class="sidebar-front-page-second">
+	<?php dynamic_sidebar( 'posts-sidebar' ); ?>
+</aside><!-- #secondary -->
