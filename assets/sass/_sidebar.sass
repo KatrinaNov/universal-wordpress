@@ -8,14 +8,24 @@ body
   border-radius: 10px
   margin-bottom: 30px
   &-downloader
-    background: #3BBDC4 url('../images/file.svg') no-repeat top 24px right 22px
+    position: relative
+    background: #3BBDC4
     border-radius: 10px
     color: #fff
     padding-top: 25px
     display: flex
     flex-direction: column
+    &-icon
+      position: absolute
+      top: 24px
+      right: 22px
+      width: 56px
+      height: 72px
+      fill: #96E2E3
+      z-index: 0
     .widget      
       &-title
+        position: relative
         font-family: Roboto Slab
         font-weight: bold
         font-size: 16px
@@ -34,6 +44,9 @@ body
         align-items: center
         justify-content: center
         &-icon
+          fill: #ffffff
+          width: 20px
+          height: 20px
           margin-right: 10px        
     .description
       padding: 0 25px
@@ -75,6 +88,7 @@ body
         &-icon
           width: 20px
           height: 20px
+          fill: #fff
         &-facebook
           background: #4267B2
         &-twitter
@@ -82,7 +96,7 @@ body
         &-youtube
           background: #FF0000
         &-insta
-          border: 2px solid #ff2659
+          background:#ff2659
   &-recent-posts
     .widget-title
       font-weight: 900

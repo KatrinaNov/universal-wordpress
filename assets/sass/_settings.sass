@@ -6,9 +6,31 @@ body
 .more
   display: inline-block
   color: #ffffff
-  padding: 10px 50px 10px 20px
-  background: #4592FF url('../images/arrow.svg') no-repeat center right 20px
+  padding: 10px 20px
+  background-color: #4592FF 
+  background-image: url('../images/sprite.svg#arrow')
   text-decoration: none
   border-radius: 20px
   &:visited, &:focus, &:hover
     color: #fff
+  &-icon
+    width: 20px
+    height: 20px
+    fill: #fff
+    vertical-align: middle
+    margin-left: 5px
+.comments
+  display: flex
+  align-items: center
+  &-counter
+    color: #939699
+    font-size: 12px
+    line-height: 15px
+    margin-left: 5px
+  &-icon
+    width: 15px
+    height: 15px
+    fill: #BCBFC2
+    &--white
+      fill: #fff
+      opacity: 0.4

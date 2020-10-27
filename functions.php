@@ -87,6 +87,9 @@ class Downloader_Widget extends WP_Widget {
 		$link = apply_filters( 'widget_link', $instance['link'] );
 
 		echo $args['before_widget'];
+		echo '<svg class="widget-downloader-icon">
+						<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#file"></use>
+					</svg>';
 		if ( ! empty( $title ) ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
@@ -95,7 +98,9 @@ class Downloader_Widget extends WP_Widget {
 		}
 		if ( ! empty( $link ) ) {
 			echo '<a class="widget-link" href="' . $link . '" target="_blank">
-				<img class="widget-link-icon" src=" '. get_template_directory_uri().'/assets/images/download.svg" alt="icon: download">
+				<svg class="widget-link-icon">
+					<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#download"></use>
+				</svg>
 				Скачать
 			</a>';
 		}
@@ -221,22 +226,30 @@ class Social_Widget extends WP_Widget {
 		}	
 		if ( ! empty( $link_facebook ) ) {
 			echo '<a class="widget-link widget-link-facebook" href="' . $link_facebook . '" target="_blank">
-				<img class="widget-link-icon" src=" '. get_template_directory_uri().'/assets/images/facebook.svg" alt="icon: facebook">
+				<svg class="widget-link-icon">
+					<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#facebook"></use>
+				</svg>
 			</a>';
 		}
 		if ( ! empty( $link_twitter ) ) {
 			echo '<a class="widget-link widget-link-twitter" href="' . $link_twitter . '" target="_blank">
-				<img class="widget-link-icon" src=" '. get_template_directory_uri().'/assets/images/twitter.svg" alt="icon: twitter">
+				<svg class="widget-link-icon">
+					<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#twitter"></use>
+				</svg>
 			</a>';
 		}
 		if ( ! empty( $link_youtube ) ) {
 			echo '<a class="widget-link widget-link-youtube" href="' . $link_youtube . '" target="_blank">
-				<img class="widget-link-icon" src=" '. get_template_directory_uri().'/assets/images/youtube.svg" alt="icon: youtube">
+				<svg class="widget-link-icon">
+					<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#youTube"></use>
+				</svg>
 			</a>';
 		}
 		if ( ! empty( $link_insta ) ) {
 			echo '<a class="widget-link widget-link-insta" href="' . $link_insta . '" target="_blank">
-				<img class="widget-link-icon" src=" '. get_template_directory_uri().'/assets/images/instagram.svg" alt="icon: instagram">
+				<svg class="widget-link-icon">
+					<use xlink:href="'.get_template_directory_uri().'/assets/images/sprite.svg#instagram"></use>
+				</svg>
 			</a>';
 		}
 		echo $args['after_widget'];
@@ -374,8 +387,15 @@ class Recent_Posts_Widget extends WP_Widget {
 			foreach ( $postslist as $post ){
 				setup_postdata($post);
 				?>
-				<a href="<?php the_permalink();?>" class="recent-post-link">
-					<img class="recent-post-thumb" src="<?php the_post_thumbnail_url(null, 'thumbnail') ?>" alt="<?php the_title(); ?>">
+				<a href="<?php the_permalink();?>" class="recent-post-link">			
+					<img class="recent-post-thumb" src="<?php 
+					if( has_post_thumbnail() ) {
+						the_post_thumbnail_url(null, 'thumbnail');
+					}
+					else {
+						echo get_template_directory_uri().'/assets/images/img-default.png"';
+					}?>
+					" alt="<?php the_title(); ?>">
 					<div class="recent-post-info">
 						<h4 class="recent-post-title"><?php echo mb_strimwidth(get_the_title(), 0, 35, "..."); ?></h4>
 						<span class="recent-post-time">
@@ -473,7 +493,10 @@ add_action( 'widgets_init', 'register_recent_posts_widget' );
 	function enqueue_universal_style() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 		wp_enqueue_style( 'Roboto-Slab', '//fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
-		wp_enqueue_style( 'universal-theme-style', get_template_directory_uri().'/assets/css/universal-theme.css', 'style' );
+		wp_enqueue_style( 'swiper-slider-style', get_template_directory_uri().'/assets/css/swiper-bundle.min.css', time());
+		wp_enqueue_style( 'universal-theme-style', get_template_directory_uri().'/assets/css/universal-theme.css', 'style', time() );
+		wp_enqueue_script('swiper', get_template_directory_uri().'/assets/js/swiper-bundle.min.js', null , time(), true );
+		wp_enqueue_script('scripts', get_template_directory_uri().'/assets/js/scripts.js', 'swiper' , time(), true );
 	}
 
 	// изменяем настройки облака тегов
