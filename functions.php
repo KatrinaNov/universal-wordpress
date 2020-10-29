@@ -16,7 +16,13 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 		// регистрация меню
 		register_nav_menus( [
 			'header_menu' => 'Header menu',
-			'footer_menu' => 'Footer menu'
+			'footer_menu' => 'Footer menu',
+			'news_menu' => 'News menu',
+			'articles_menu' => 'Articles menu',
+			'video_menu' => 'Video lesson menu',
+			'courses_menu' => 'Courses menu',
+			'info_menu' => 'Info menu',
+			'category_menu' => 'Category menu'
 		] );
 	}
 endif;
@@ -48,6 +54,28 @@ function universal_theme_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer menu', 'universal-theme' ),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__( 'Добавьте меню сюда', 'universal-theme' ),
+			'before_widget' => '<div id="%1$s" class="footer-menu %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="footer-menu-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer text', 'universal-theme' ),
+			'id'            => 'sidebar-footer-text',
+			'description'   => esc_html__( 'Добавьте текст сюда', 'universal-theme' ),
+			'before_widget' => '<div id="%1$s" class="footer-text %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '',
+			'after_title'   => '',
 		)
 	);
 }

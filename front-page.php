@@ -148,6 +148,7 @@
     wp_reset_postdata(); // Сбрасываем $post
     ?> 
   </ul>
+  
   <!-- ./articles-list -->
   <div class="articles-grid">
     <?php		
