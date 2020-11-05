@@ -92,7 +92,7 @@
               }
             ?>
             <a href="<?php the_permalink(); ?>" class="post-permalink">
-              <h4 class="post-title"><?php echo mb_strimwidth(get_the_title(), 0, 70, "..."); ?></h4>
+              <h4 class="post-hero-title"><?php echo mb_strimwidth(get_the_title(), 0, 70, "..."); ?></h4>
             </a>
           </li>
         <?php 
@@ -183,7 +183,7 @@
                       }?>
                       " alt="<?php the_title(); ?>"> 
                     </div>
-                    <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
+                    <span class="category-link"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
                     <h4 class="articles-grid-title"><?php echo mb_strimwidth(get_the_title(), 0, 30, "..."); ?></h4>
                     <p class="articles-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 110, "..."); ?></p>
                     <div class="articles-grid-info">
@@ -223,7 +223,7 @@
                       }
                     ?>
                     </span>
-                    <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
+                    <span class="category-link"><?php $category = get_the_category(); echo $category[0]->name; ?></span>
                     <h4 class="articles-grid-title"><?php the_title(); ?></h4>
                     <div class="articles-grid-info">
                       <div class="author">
@@ -365,7 +365,7 @@
                     <?php 
                       foreach(get_the_category() as $category) {
                         printf(
-                          '<span href="%s" class="category-name %s">%s</span>',
+                          '<span href="%s" class="category-link %s">%s</span>',
                           esc_url(get_category_link( $category )),
                           esc_html($category -> slug),
                           esc_html($category -> name)
@@ -378,7 +378,11 @@
                       <p class="articles-news-grid-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 170, "..."); ?></p>
                     </div>                    
                     <div class="articles-news-grid-info">
-                      <span class="date"><?php the_time('j F'); ?></span>
+                      <span class="date">
+                         <svg class="comments-icon">
+                          <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
+                        </svg> 
+                      <?php the_time('j F'); ?></span>
                       <div class="comments">
                         <svg class="comments-icon">
                           <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#comment"></use>
@@ -498,7 +502,7 @@
                 $query->the_post();         
                 ?>             
               <div class="career">            
-                <span class="category-name"><?php $category = get_the_category(); echo $category[0]->name; ?></span>      
+                <span class="category-link"><?php $category = get_the_category(); echo $category[0]->name; ?></span>      
                 <h3 class="career-title"><?php the_title(); ?></h3>
                 <p class="career-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 85, "..."); ?></p>
                 <a href="<?php the_permalink(); ?>" class="more">Читать далее

@@ -337,7 +337,7 @@ body {
   color: #4B5157;
 }
 
-.hero .right .post-title {
+.hero .right .post-hero-title {
   line-height: 20px;
   font-weight: 400;
   margin-bottom: 0;
@@ -362,6 +362,22 @@ body {
 }
 
 .category-link.html {
+  color: #AC8EE3;
+}
+
+.category-link.news {
+  color: #4592FF;
+}
+
+.category-link.opinions {
+  color: #3BBDC4;
+}
+
+.category-link.hot {
+  color: #FF4F52;
+}
+
+.category-link.collections {
   color: #AC8EE3;
 }
 
@@ -480,7 +496,7 @@ body {
   grid-area: 1 / 1 / 3 / 3;
 }
 
-.articles-grid-item-1 .category-name {
+.articles-grid-item-1 .category-link {
   font-weight: 900;
   font-size: 12px;
   line-height: 15px;
@@ -607,7 +623,7 @@ body {
   background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35));
 }
 
-.articles-grid-item-2 .category-name {
+.articles-grid-item-2 .category-link {
   font-weight: 900;
   font-size: 12px;
   line-height: 15px;
@@ -1155,30 +1171,6 @@ body {
   line-height: 15px;
   color: #939699;
   margin-top: auto;
-}
-
-.category-name {
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.category-name.news {
-  color: #4592FF;
-}
-
-.category-name.opinions {
-  color: #3BBDC4;
-}
-
-.category-name.hot {
-  color: #FF4F52;
-}
-
-.category-name.collections {
-  color: #AC8EE3;
 }
 
 .special {
@@ -1890,4 +1882,170 @@ body {
   .footer-info .widget-link {
     margin: 0 8px;
   }
+}
+
+.post-header {
+  padding: 60px 0 72px;
+  color: #fff;
+}
+
+.post-header-title {
+  position: relative;
+}
+
+.post-header-title .favorites {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.post-header-title .favorites-icon {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  opacity: 0.4;
+}
+
+.post-header-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.85;
+}
+
+.post-header-info .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.post-header-info .date-icon {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+  margin-right: 5px;
+}
+
+.post-header-info .likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.post-header-info .likes-counter {
+  margin-left: 6px;
+}
+
+.post-home-link {
+  margin-left: auto;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+.post-home-link-icon {
+  width: 18px;
+  height: 17px;
+  fill: #fff;
+  margin-right: 5px;
+}
+
+.post-home-link:visited {
+  color: inherit;
+}
+
+.post-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post .navigation {
+  margin: 0;
+}
+
+.post .nav-links {
+  min-width: 161px;
+}
+
+.post .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.post .nav-links a:visited {
+  color: inherit;
+}
+
+.post .nav-links a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post .nav-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.post .nav-links a .prev-icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-right: 8px;
+}
+
+.post .nav-links a .next-icon {
+  margin-left: 8px;
+}
+
+.post-title {
+  font-family: Roboto Slab;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 70px;
+  max-width: 750px;
+  margin-top: 52px;
+  margin-bottom: 30px;
+}
+
+.post p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+  opacity: 0.85;
+  margin-bottom: 43px;
+  max-width: 632px;
 }

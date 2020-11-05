@@ -553,3 +553,7 @@ function delete_intermediate_image_sizes( $sizes ){
 		'2048x2048',
 	] );
 }
+#меняем стиль многоточия в отрывках
+add_filter('excerpt_more', function($more) {
+	return '...';
+});
