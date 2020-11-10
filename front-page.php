@@ -431,7 +431,7 @@
 
           if ( $query->have_posts() ) {        
             // пока посты есть, выводим их
-            while ( $query->have_posts() ) {
+            // while ( $query->have_posts() ) {
               $query->the_post();         
               ?>             
             <div class="photo-report">
@@ -440,7 +440,7 @@
                   <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
                       <!-- Slides -->
-                      <?php  $images = get_attached_media( 'image' );
+                      <?php  $images = get_attached_media( 'image' );                    
                         foreach ($images as $image) {
                           echo '<div class="swiper-slide"><img src="';
                           print_r($image -> guid);
@@ -479,7 +479,7 @@
                 </a>
               </div>         
               <?php 
-            }
+            // }
           } else {
             // Постов не найдено
           }

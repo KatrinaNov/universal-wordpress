@@ -2,6 +2,8 @@
   &-header
     padding: 60px 0 72px
     color: #fff
+    &-wrapper
+      position: relative
     &-title
       position: relative
       .favorites
@@ -36,6 +38,35 @@
         margin-right: 20px
         &-counter
           margin-left: 6px
+    .navigation
+      margin: 0
+    .nav-links
+      min-width: 161px
+      a
+        color: #ffffff
+        text-decoration: none  
+        font-weight: 900    
+        &:visited
+          color: inherit
+        span
+          display: flex
+          align-items: center
+        svg
+          width: 20px
+          height: 20px
+          fill: #fff
+        .prev-icon
+          transform: rotate(180deg)
+          margin-right: 8px
+        .next-icon
+          margin-left: 8px
+    p
+      font-size: 18px
+      line-height: 30px
+      color: #FFFFFF
+      opacity: 0.85
+      margin-bottom: 43px
+      max-width: 632px
   &-home
     &-link
       margin-left: auto
@@ -56,28 +87,6 @@
     display: flex
     justify-content: space-between
     align-items: center 
-  .navigation
-    margin: 0
-  .nav-links
-    min-width: 161px
-    a
-      color: #ffffff
-      text-decoration: none  
-      font-weight: 900    
-      &:visited
-        color: inherit
-      span
-        display: flex
-        align-items: center
-      svg
-        width: 20px
-        height: 20px
-        fill: #fff
-      .prev-icon
-        transform: rotate(180deg)
-        margin-right: 8px
-      .next-icon
-        margin-left: 8px
   &-title
     font-family: Roboto Slab
     font-weight: bold
@@ -86,10 +95,119 @@
     max-width: 750px
     margin-top: 52px
     margin-bottom: 30px
-  p
-    font-size: 18px
-    line-height: 30px
-    color: #FFFFFF
-    opacity: 0.85
-    margin-bottom: 43px
-    max-width: 632px
+  &-author
+    position: absolute
+    right: 0
+    background: #fff
+    border-radius: 10px
+    overflow: hidden
+    border: 1px solid #D9DADB
+    display: flex
+    align-items: center
+    flex-direction: column
+    min-width: 263px
+    &-info
+      display: flex
+      flex-direction: column
+      align-items: center
+      color: #262D33
+      padding: 35px 25px 20px
+    &-avatar
+      width: 90px
+      height: 90px
+      border-radius: 50%
+      object-fit: cover
+    &-name
+      font-family: 'Roboto Slab'
+      font-weight: bold
+      font-size: 20px
+      line-height: 25px
+      margin-top: 15px
+      margin-bottom: 5px
+    &-rank
+      color: #4B5157
+      margin-bottom: 15px
+    &-posts
+      font-weight: 900
+    &-link
+      font-weight: 900
+      color: #262D33
+      padding: 15px 25px
+      text-decoration: none
+      border-top: 1px solid #D9DADB
+      width: 100%
+      text-align: center
+      &:visited
+        color: #262D33
+  &-content
+    padding-top: 60px
+    p
+      font-size: 18px
+      line-height: 30px
+      color: #4B5157
+      margin: 30px 0
+      &:first-child
+        max-width: 623px
+
+    .has-drop-cap
+      &:not(:focus)
+        &:first-letter
+          font-size: 100px
+          line-height: 75px
+          color: #4592FF
+    h1, h2, h3, h4, h5, h6 
+      font-family: 'Roboto Slab'
+      font-weight: bold
+    h2      
+      font-size: 25px
+      line-height: 30px      
+    h3
+      font-size: 22px
+      line-height: 24px 
+    h4
+      font-size: 18px
+      line-height: 20px
+    h5
+      font-size: 16px
+      line-height: 18px
+    h6
+      font-size: 14px
+      line-height: 16px
+    ul, ol
+      padding-left: 10px
+      margin: 20px 0
+      font-size: 18px
+      color: #4B5157
+      line-height: 30px
+    blockquote
+      position: relative
+      font-family: 'Roboto Slab'
+      font-weight: bold
+      font-size: 25px
+      line-height: 30px
+      margin-left: 0
+      margin-top: 80px
+      margin-bottom: 45px
+      &::before
+        content: ''
+        position: absolute
+        top: -20px
+        left: -20px
+        width: 70px
+        height: 70px
+        background: url(../images/quote.svg) no-repeat center/100%
+        z-index: -1
+    table, pre
+      font-size: 18px
+      color: #4B5157
+      line-height: 30px
+  &-footer
+    .tags-links
+      a
+        font-weight: 900   
+        color: inherit
+        text-decoration: none
+        padding: 5px 15px
+        border: 1px solid #D9DADB
+        border-radius: 5px
+        margin-right: 10px
