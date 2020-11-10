@@ -2256,6 +2256,10 @@ body {
   line-height: 30px;
 }
 
+.post-content .wp-block-button__link {
+  background: #4169e1;
+}
+
 .post-footer .tags-links a {
   font-weight: 900;
   color: inherit;
