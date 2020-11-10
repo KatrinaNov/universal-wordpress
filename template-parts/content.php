@@ -64,7 +64,7 @@
 							</svg> 
 						</button>
 					</div>
-					<?php the_excerpt(); ?>
+					<p><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "..."); ?></p>
 					<!-- информация: дата, комменты, лайки -->
 					<div class="post-header-info">
 						<div class="date">
