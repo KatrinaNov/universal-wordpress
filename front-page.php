@@ -46,11 +46,7 @@
             }
           ?>
           <h2 class="post-title"> <?php echo mb_strimwidth(get_the_title(), 0, 70, "..."); ?></h2>
-          <a href="<?php the_permalink(); ?>" class="more">Читать далее
-            <svg class="more-icon">
-              <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
-            </svg> 
-          </a>
+          <a href="<?php the_permalink(); ?>" class="more">Читать далее</a>
         </div>
         <?php 
           }
@@ -312,11 +308,7 @@
       <section class="investigation" style="background: linear-gradient(0deg, rgba(64, 48, 61, 0.35), rgba(64, 48, 61, 0.35)), url(<?php the_post_thumbnail_url(); ?>) no-repeat center/cover;">
         <div class="container">
             <h2 class="investigation-title"><?php the_title(); ?></h2>
-            <a href="<?php the_permalink(); ?>" class="more">Читать далее
-              <svg class="more-icon">
-                <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
-              </svg> 
-            </a>
+            <a href="<?php the_permalink(); ?>" class="more">Читать далее </a>
         </div>
         <!-- /.container -->
       </section>
@@ -505,11 +497,7 @@
                 <span class="category-link"><?php $category = get_the_category(); echo $category[0]->name; ?></span>      
                 <h3 class="career-title"><?php the_title(); ?></h3>
                 <p class="career-excerpt"><?php echo mb_strimwidth(get_the_excerpt(), 0, 85, "..."); ?></p>
-                <a href="<?php the_permalink(); ?>" class="more">Читать далее
-                  <svg class="more-icon">
-                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
-                  </svg> 
-                </a>
+                <a href="<?php the_permalink(); ?>" class="more">Читать далее</a>
               </div>         
                 <?php 
               }
