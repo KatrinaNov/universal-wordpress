@@ -1655,6 +1655,59 @@ body {
   padding: 40px 0 0;
 }
 
+.footer-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 70px;
+}
+
+.footer-form-wrapper {
+  max-width: 760px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-form-title {
+  font-family: Roboto Slab;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  color: #262D33;
+  margin-top: 25px;
+}
+
+.footer-form .input {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: 1px solid #D9DADB;
+  border-radius: 5px;
+  min-width: 313px;
+  height: 40px;
+}
+
+.footer-form button {
+  background: #4592FF;
+  border-radius: 20px;
+  padding: 12px 25px;
+  height: 40px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
   .container {
     max-width: 960px;
