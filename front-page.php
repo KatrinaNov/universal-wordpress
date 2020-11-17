@@ -38,7 +38,7 @@
           <?php 
             foreach(get_the_category() as $category) {
               printf(
-                '<a href="%s" class="category-link %s">%s</a>',
+                '<a href="%s" class="category-link category-%s">%s</a>',
                 esc_url(get_category_link( $category )),
                 esc_html($category -> slug),
                 esc_html($category -> name)
@@ -80,7 +80,7 @@
             <?php 
               foreach(get_the_category() as $category) {
                 printf(
-                  '<a href="%s" class="category-link %s">%s</a>',
+                  '<a href="%s" class="category-link category-%s">%s</a>',
                   esc_url(get_category_link( $category )),
                   esc_html($category -> slug),
                   esc_html($category -> name)
@@ -357,7 +357,7 @@
                     <?php 
                       foreach(get_the_category() as $category) {
                         printf(
-                          '<span href="%s" class="category-link %s">%s</span>',
+                          '<span href="%s" class="category-link category-%s">%s</span>',
                           esc_url(get_category_link( $category )),
                           esc_html($category -> slug),
                           esc_html($category -> name)

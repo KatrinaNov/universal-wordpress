@@ -1,0 +1,42 @@
+.pagination
+  .nav-links
+    background: #fff
+    border-radius: 10px
+    margin: 0 0 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    *      
+      text-decoration: none
+      color: #262D33
+      font-weight: 900
+      text-align: center
+      &:not(:last-child)
+        border-right: 1px solid #D9dadb
+    a, span
+      padding: 17px
+    .next
+      padding: 17px 70px
+      margin-left: auto
+      flex-grow: 1
+      display: flex
+      align-items: center
+    .prev
+      padding: 17px 70px
+      margin-right: auto
+      flex-grow: 1  
+      display: flex
+      align-items: center
+  &-prev
+    &-icon  
+      width: 20px
+      height: 20px
+      fill: #BCBFC2 
+      transform: rotate(180deg)
+      margin-right: 8px
+  &-next
+    &-icon  
+      width: 20px
+      height: 20px
+      fill: #BCBFC2 
+      margin-left: 8px
