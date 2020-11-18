@@ -1,3 +1,7 @@
+@media screen and ( max-width: 1250px )
+  .post
+    &-list
+      grid-template-columns: repeat(3, 1fr)
 @media screen and ( max-width: 1200px )
   .container
     max-width: 960px
@@ -94,6 +98,9 @@
   .pagination
     .nav-links
       margin-bottom: 0
+  .post
+    &-list
+      grid-template-columns: repeat(2, 1fr)
 @media screen and ( max-width: 768px ) 
   .container
     max-width: 576px
@@ -218,3 +225,6 @@
         justify-content: center
       .widget-link
         margin: 0 8px
+  .post
+    &-list
+      grid-template-columns: 1fr
