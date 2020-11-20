@@ -2404,6 +2404,57 @@ body {
   margin-left: 5px;
 }
 
+.section-dark {
+  background: #262D33;
+  padding: 50px 0 122px;
+  color: #fff;
+}
+
+.page-title {
+  font-family: Roboto Slab;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.page-text {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.contacts-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts-form {
+  max-width: 460px;
+}
+
+.contacts-form input {
+  width: 100%;
+  padding: 10px 15px;
+  color: #939699;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.contacts-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  color: #939699;
+  margin-bottom: 20px;
+  min-height: 120px;
+  resize: none;
+}
+
 .pagination .nav-links {
   background: #fff;
   border-radius: 10px;

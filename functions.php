@@ -731,3 +731,43 @@ function plural_form($number, $after) {
 	$cases = array (2, 0, 1, 1, 1, 2);
 	echo $number.' '.$after[ ($number%100>4 && $number%100<20)? 2: $cases[min($number%10, 5)] ];
 }
+
+
+// Подключаем локализацию в самом конце подключаемых к выводу скриптов, чтобы скрипт
+// 'jquery', к которому мы подключаемся, точно был добавлен в очередь на вывод.
+
+// Подключение аякс в переменную 'adminAjax', 
+add_action( 'wp_enqueue_scripts', 'adminAjax_data', 99 );
+function adminAjax_data(){
+
+	// Первый параметр 'twentyfifteen-script' означает, что код будет прикреплен к скрипту с ID 'jquery'
+	// 'twentyfifteen-script' должен быть добавлен в очередь на вывод, иначе WP не поймет куда вставлять код локализации
+	// Заметка: обычно этот код нужно добавлять в functions.php в том месте где подключаются скрипты, после указанного скрипта
+	wp_localize_script( 'jquery', 'adminAjax', 
+		array(
+			'url' => admin_url('admin-ajax.php')
+		)
+	);  
+
+}
+// работа с формами
+// для админки 
+add_action('wp_ajax_contacts_form', 'ajax_form');
+// для админки и фронтенда
+add_action('wp_ajax_nopriv_contacts_form', 'ajax_form');
+function ajax_form() {
+	$contact_name = $_POST['contact_name'];
+	$contact_email = $_POST['contact_email'];
+	$contact_comment = $_POST['contact_comment'];
+	$message = 'Пользователь ' . $contact_name . ', email: ' .$contact_email . '. Оставил сообщение ' . $contact_comment;
+	$headers = 'From: Katrina <katrina.nov13@gmail.com>' . "\r\n";
+
+	$sent_message = wp_mail('katrina.nov13@gmail.com', 'Новая заявка с сайта', $message , $headers);
+	if ($sent_message) {
+		echo 'Все получилось';
+	} else {
+		echo 'Ошибка';
+	}
+	// выход нужен для того, чтобы в ответе не было ничего лишнего, только то что возвращает функция
+	wp_die();
+}
