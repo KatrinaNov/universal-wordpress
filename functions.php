@@ -760,9 +760,9 @@ function ajax_form() {
 	$contact_email = $_POST['contact_email'];
 	$contact_comment = $_POST['contact_comment'];
 	$message = 'Пользователь ' . $contact_name . ', email: ' .$contact_email . '. Оставил сообщение ' . $contact_comment;
-	$headers = 'From: Katrina <katrina.nov13@gmail.com>' . "\r\n";
+	$headers = 'From: Katrina <katrina.new13@yandex.ru>' . "\r\n";
 
-	$sent_message = wp_mail('katrina.nov13@gmail.com', 'Новая заявка с сайта', $message , $headers);
+	$sent_message = wp_mail('katrina.new13@yandex.ru', 'Новая заявка с сайта', $message , $headers);
 	if ($sent_message) {
 		echo 'Все получилось';
 	} else {
