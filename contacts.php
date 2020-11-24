@@ -25,25 +25,18 @@ get_header();?>
         <h2 class="contacts-title">Или по этим контактам</h2>
         <!-- проверяем есть ли произвольное поле email -->
          <?php 
-          $email = get_post_meta(get_the_ID(), 'email', true);
+          $email = get_field('email');
           if ($email) {
             echo '<a href="mailto:' . $email . '">' . $email . '</a>';
           }
         ?>  
          <!-- проверяем есть ли произвольное поле адрес -->     
         <?php 
-          $address = get_post_meta(get_the_ID(), 'address', true);
+          $address = get_field('address');
           if ($address) {
             echo '<address>' . $address . '</address>';
           }
-        ?>
-        <!-- проверяем есть ли произвольное поле телефон -->
-         <?php 
-          $phone = get_post_meta(get_the_ID(), 'phone', true);
-          if ($phone) {
-            echo '<a href="tel:' . $phone . '">' . $phone . '</a>';
-          }
-        ?>  
+        ?>        
          <?php 
           $phone = get_field('phone');
           if ($phone) {

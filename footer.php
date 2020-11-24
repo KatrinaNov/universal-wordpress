@@ -52,7 +52,13 @@
         </div>
         <div class="footer-text-wrapper">
           <?php dynamic_sidebar( 'sidebar-footer-text' ); ?>
-          <span class="footer-copyright"><?php echo get_field('phone') . ' &copy; ' . get_bloginfo( 'name' );?></span>
+          <span class="footer-copyright"> 
+          <?php 
+           $phone = get_field('phone', 97);
+          if ($phone) {
+            echo '<a href="tel:' . $phone . '">' . $phone . '</a>';
+          }
+            echo ' &copy; ' . get_bloginfo( 'name' );?></span>
         </div>
       </div>
     </footer>

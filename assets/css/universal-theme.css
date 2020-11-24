@@ -1666,6 +1666,11 @@ body {
   padding: 40px 0 0;
 }
 
+.footer-text-wrapper a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer-form {
   display: -webkit-box;
   display: -ms-flexbox;
