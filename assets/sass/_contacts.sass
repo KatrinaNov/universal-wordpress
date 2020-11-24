@@ -2,10 +2,7 @@
   &-dark
     background: #262D33
     padding: 50px 0 122px
-    color: #fff
-    .left
-      margin-right: 80px
-      width: 55%
+    color: #fff 
 .page
   &-title
     font-family: Roboto Slab
@@ -13,17 +10,30 @@
     font-size: 40px
     line-height: 50px
     margin-top: 0
-    margin-bottom: 27px
-  &-text
-    font-weight: bold
-    font-size: 18px
-    line-height: 30px
+    margin-bottom: 27px 
 .contacts
   &-wrapper
     display: flex
     align-items: flex-start
-.wpcf7-form
-  max-width: 460px
+    .left
+      margin-right: 80px
+      width: 55%
+      max-width: 460px
+    .right
+      a, address
+        text-decoration: none
+        color: inherit
+        opacity: 0.85
+        font-style: normal
+        margin-bottom: 15px
+        display: block
+  &-title
+    font-weight: bold
+    font-size: 18px
+    line-height: 30px   
+    color: #FFFFFF
+    margin-bottom: 28px
+.wpcf7-form  
   input
     width: 100%
     padding: 10px 15px

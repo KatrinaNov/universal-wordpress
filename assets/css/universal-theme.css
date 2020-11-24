@@ -2411,11 +2411,6 @@ body {
   color: #fff;
 }
 
-.section-dark .left {
-  margin-right: 80px;
-  width: 55%;
-}
-
 .page-title {
   font-family: Roboto Slab;
   font-weight: bold;
@@ -2423,12 +2418,6 @@ body {
   line-height: 50px;
   margin-top: 0;
   margin-bottom: 27px;
-}
-
-.page-text {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 30px;
 }
 
 .contacts-wrapper {
@@ -2440,8 +2429,27 @@ body {
           align-items: flex-start;
 }
 
-.wpcf7-form {
+.contacts-wrapper .left {
+  margin-right: 80px;
+  width: 55%;
   max-width: 460px;
+}
+
+.contacts-wrapper .right a, .contacts-wrapper .right address {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+  font-style: normal;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.contacts-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin-bottom: 28px;
 }
 
 .wpcf7-form input {
