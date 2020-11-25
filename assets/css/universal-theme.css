@@ -2474,6 +2474,11 @@ body {
   resize: none;
 }
 
+.lesson-header {
+  padding: 88px 0;
+  color: #fff;
+}
+
 .pagination .nav-links {
   background: #fff;
   border-radius: 10px;
