@@ -27,13 +27,21 @@
 					</div>
 					<!-- ./post-nav -->
 					<div class="video">
-						<iframe width="100%" height="450" src="https://www.youtube.com/embed/	<?php 
-							$video_link = get_field('video_link');
-							if ($video_link) { 
-								$tmp = explode('be/', get_field('video_link'));
-								echo end($tmp); 
-							}
-						?> " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<?php 
+							$video_link = get_field('video_link');						
+								if (stripos($video_link, '?v=')) {
+									$tmp = explode('?v=', get_field('video_link'));
+								} else {
+									$tmp = explode('/', get_field('video_link'));								
+								} 
+								if (stripos($video_link, 'youtu')) { 
+								?>
+									<iframe width="100%" height="500" src="https://www.youtube.com/embed/<?php echo explode('&', end($tmp))[0]; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
+									<?php } 
+								if (stripos($video_link, 'vimeo')) {	
+								?>
+								<iframe src="https://player.vimeo.com/video/<?php echo end($tmp); ?>?title=0&byline=0&portrait=0" width="100%" height="650" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>								
+								<?php }	?>
 					
 					</div>
 					<!-- /.video -->
