@@ -66,7 +66,7 @@
         <svg class="pagination-prev-icon">
           <use xlink:href="' .  get_template_directory_uri() .'/assets/images/sprite.svg#arrow"></use>
         </svg>  Назад'),
-        'next_text'          => __('Вперед 
+        'next_text'          => __('Next
         <svg class="pagination-next-icon">
           <use xlink:href="' .  get_template_directory_uri() .'/assets/images/sprite.svg#arrow"></use>
         </svg>'),

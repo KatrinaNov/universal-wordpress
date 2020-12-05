@@ -40,8 +40,8 @@
 								'prev_text' => '<span class="post-nav-prev"> 
 									<svg class="prev-icon">
 										<use xlink:href="' .  get_template_directory_uri() .'/assets/images/sprite.svg#arrow"></use>
-									</svg> ' . esc_html__( 'Назад', 'universal-theme' ) . '</span> ',
-								'next_text' => '<span class="post-nav-next">' . esc_html__( 'Вперед', 'universal-theme' ) . '
+									</svg> ' . esc_html__( 'Prev', 'universal-theme' ) . '</span> ',
+								'next_text' => '<span class="post-nav-next">' . esc_html__( 'Next', 'universal-theme' ) . '
 								<svg class="next-icon">
 									<use xlink:href="' . get_template_directory_uri() . '/assets/images/sprite.svg#arrow"></use>
 								</svg> </span>',
@@ -132,7 +132,7 @@
 
 				wp_link_pages(
 					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Страницы:', 'universal-theme' ),
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'universal-theme' ),
 						'after'  => '</div>',
 					)
 				);

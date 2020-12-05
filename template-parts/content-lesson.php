@@ -92,7 +92,7 @@
 
 				wp_link_pages(
 					array(
-						'before' => '<div class="page-links">' . esc_html__( 'Страницы:', 'universal-theme' ),
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'universal-theme' ),
 						'after'  => '</div>',
 					)
 				);
