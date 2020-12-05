@@ -61,7 +61,8 @@
 							<svg class="date-icon">
 								<use xlink:href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#clock"></use>
 							</svg> 
-							<?php the_time('j F, G:i'); ?>
+							<?php the_time('j F, G:i'); ?>		
+							<span class="lesson-taxonomies"><?php the_taxonomies( $args ); ?></span>		
 						</div>								
 					</div>
 					<!-- ./post-header-info -->				
