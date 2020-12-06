@@ -156,7 +156,7 @@ if ( post_password_required() ) {
     comment_form(array(
       'title_reply' => '',
       'comment_field'  => '<div class="comment-form-comment">
-          <label class="comment-label" for="comment">' . _x( 'What do you think about it? ', 'noun' ) . '</label>
+          <label class="comment-label" for="comment">' . __( 'What do you think about it? ', 'universal-theme' ) . '</label>
          
           <div class="comment-wrapper">   
            ' . get_avatar( get_current_user_id(), 75) . ' 

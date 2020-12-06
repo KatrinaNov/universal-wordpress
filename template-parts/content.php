@@ -94,7 +94,20 @@
 							<?php $author_id=get_the_author_meta( 'ID' );?>
 									<img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_author(); ?>" class="post-author-avatar">
 									<span class="post-author-name"><?php the_author(); ?></span>
-									<span class="post-author-rank">Должность</span>
+									<span class="post-author-rank"><?php 
+										// получаем список всех ролей
+										$roles = wp_roles()->roles;
+										// узнаем текущую роль пользователя
+										$current_role = get_the_author_meta('roles', $author_id)[0];
+										// пробегаем по всем ролям
+										foreach ($roles as $role => $value) {
+											// если роль совпадает с текущей ролью
+											if ($role == $current_role) {
+												// выводим имя роли
+												echo $value['name'];
+											}
+										}
+										?></span>
 									<span class="post-author-posts">
 										<?php plural_form(
 											count_user_posts($author_id),

@@ -31,7 +31,21 @@
           <img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_author(); ?>" class="avatar">
           <div class="author-bio">
             <span class="author-name"><?php the_author(); ?></span>
-            <span class="author-rank">Должность</span>
+            <span class="author-rank"><?php 
+            // получаем список всех ролей
+            $roles = wp_roles()->roles;
+            // узнаем текущую роль пользователя
+            $current_role = get_the_author_meta('roles', $author_id)[0];
+            // пробегаем по всем ролям
+            foreach ($roles as $role => $value) {
+              // если роль совпадает с текущей ролью
+              if ($role == $current_role) {
+                // выводим имя роли
+                echo $value['name'];
+              }
+            }
+            ?>
+            </span>
           </div>
         </a>
         <div class="post-text">
@@ -458,7 +472,20 @@
                   <img src="<?php echo get_avatar_url($author_id);?>" alt="<?php the_author(); ?>" class="avatar">
                   <div class="author-bio">
                     <span class="author-name"><?php the_author(); ?></span>
-                    <span class="author-rank">Должность</span>
+                    <span class="author-rank"><?php 
+                      // получаем список всех ролей
+                      $roles = wp_roles()->roles;
+                      // узнаем текущую роль пользователя
+                      $current_role = get_the_author_meta('roles', $author_id)[0];
+                      // пробегаем по всем ролям
+                      foreach ($roles as $role => $value) {
+                        // если роль совпадает с текущей ролью
+                        if ($role == $current_role) {
+                          // выводим имя роли
+                          echo $value['name'];
+                        }
+                      }
+                      ?></span>
                   </div>
                 </a>
                 <h3 class="photo-report-title"><?php the_title(); ?></h3>
