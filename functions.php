@@ -16,9 +16,9 @@ if ( ! function_exists( 'universal_theme_setup' ) ) :
 		function activate_universal_theme() {
 			// Получим объект данных роли "Автор"
 			$author = get_role( 'author' );
-			add_role( 'developer', 'Разработчик', $author->capabilities);
-			add_role( 'designer', 'Дизайнер', $author->capabilities);
-			add_role( 'photographer', 'Фотограф', $author->capabilities);
+			add_role( 'developer', __('Developer', 'universal-theme'), $author->capabilities);
+			add_role( 'designer', __('Designer', 'universal-theme'), $author->capabilities);
+			add_role( 'photographer', __('Photographer', 'universal-theme'), $author->capabilities);
 		}
 		// подключение файлов перевода
 		load_theme_textdomain( 'universal-theme', get_template_directory() . '/languages' );

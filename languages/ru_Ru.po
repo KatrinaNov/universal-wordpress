@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: universal-theme\n"
-"POT-Creation-Date: 2020-12-10 19:53+0300\n"
+"POT-Creation-Date: 2020-12-10 21:10+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: My Super Team\n"
@@ -51,6 +51,18 @@ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 "Вы должны быть <a href=\"%s\">зарегистрированы</a> , чтобы оставить "
 "комментарий."
+
+#: functions.php:19
+msgid "Developer"
+msgstr "Разработчик"
+
+#: functions.php:20
+msgid "Designer"
+msgstr "Дизайнер"
+
+#: functions.php:21
+msgid "Photographer"
+msgstr "Фотограф"
 
 #: functions.php:52 functions.php:63
 msgid "Lessons"
